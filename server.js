@@ -1,7 +1,7 @@
 //modules
-express = require("express")
-app = express()
-expressEjsLayouts = require("express-ejs-layouts")
+const express = require("express")
+const app = express()
+const expressEjsLayouts = require("express-ejs-layouts")
 
 //routers
 indexRouter = require("./routes/index")
@@ -17,6 +17,7 @@ app.set("views", viewsDir)
 app.set("layout", "layouts/layout")
 
 //middleware
+app.use(expressEjsLayouts)
 app.use(express.static(publicDir))
 
 //use routers
