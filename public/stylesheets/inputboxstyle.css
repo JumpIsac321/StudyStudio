@@ -1,0 +1,27 @@
+
+.area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+.inputbox{
+    background-color: lightgray;
+    height: 200px;
+    padding: 10px;
+}
+
+.inputbox h2{
+    text-align: center;
+    height: 50px;
+    padding: 10px;
+    margin: 0;
+}
+
+.inputbox form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 75%;
+}

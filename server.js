@@ -14,12 +14,13 @@ const expressEjsLayouts = require("express-ejs-layouts")
 // db.on('error', error => console.log(error))
 // db.once('open', () => console.log('connection sukeesful'))
 
+
 //routers
 indexRouter = require("./routes/index")
 quizRouter = require("./routes/quiz")
 
 //directories
-const publicDir = __dirname + '../Client/public'
+const publicDir = __dirname + '/public'
 const viewsDir = __dirname + '/views'
 
 //settings

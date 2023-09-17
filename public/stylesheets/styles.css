@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+.main-title{
+    text-align: center;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.navigation a {
+    display: inline;
+}
+.darkmode img{
+    width: 25px;
+    height: 25px;
+}
