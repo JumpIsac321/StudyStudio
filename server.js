@@ -19,8 +19,8 @@ indexRouter = require("./routes/index")
 quizRouter = require("./routes/quiz")
 
 //directories
-publicDir = __dirname + '/public'
-viewsDir = __dirname + '/views'
+const publicDir = __dirname + '/public'
+const viewsDir = __dirname + '/views'
 
 //settings
 app.set("view engine","ejs")

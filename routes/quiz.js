@@ -1,8 +1,8 @@
-express = require("express")
-router = express.Router()
+const express = require("express")
+const router = express.Router()
 
 router.get('/',(req,res) => {
-    res.render('join-game')
+    res.render('quiz/join-game')
 })
 
 module.exports = router
