@@ -1,3 +1,11 @@
 .main-title{
     text-align: center;
 }
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

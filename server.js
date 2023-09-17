@@ -1,7 +1,18 @@
+if (process.env.NODE_ENV !== 'production')
+{
+    require('dotenv').config()
+}
+
+
 //modules
 const express = require("express")
 const app = express()
 const expressEjsLayouts = require("express-ejs-layouts")
+const mongoose = require('mongoose')
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true })
+const db = mongoose.connection
+db.on('error', error => console.log(error))
+db.once('open', () => console.log('connection sukeesful'))
 
 //routers
 indexRouter = require("./routes/index")
