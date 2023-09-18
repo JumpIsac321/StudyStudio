@@ -38,3 +38,8 @@ app.use("/quiz",quizRouter)
 
 //start server
 app.listen(process.env.PORT || 3000)
+const io = require('socket.io')(4000)
+
+io.on('connection', socket => {
+    socket.emit('message','connected succesfuly')
+})
