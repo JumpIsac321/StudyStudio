@@ -21,7 +21,7 @@ quizRouter = require("./routes/quiz")
 
 //directories
 const publicDir = __dirname + '/public'
-const viewsDir = __dirname + '/views'
+const viewsDir = __dirname + '../Client/react-project/views'
 
 //settings
 app.set("view engine","ejs")
