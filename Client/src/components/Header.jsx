@@ -1,14 +1,16 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 function Header() {
   return (
     <>
-        <header class="topbar">
-            <nav class="navigation">
-                <a href="/"><h2 class="title header-title">Study Studio</h2></a>
-                <a href="/quiz">Live Quiz</a>
-                <a href="/">Start Learning</a>
-                <button class="darkmode"><img src="/images/crecent.png"/></button>
+        <header className="topbar">
+            <nav className="navigation">
+                <Link to = "/"><h2 className="title header-title">Study Studio</h2></Link>
+                <Link to = "/game">Live Quiz</Link>
+                <Link to = "/learn">Start Learning</Link>
+                <button className="darkmode"><img src="/images/crecent.png"/></button>
             </nav>
         </header>
         <hr/>

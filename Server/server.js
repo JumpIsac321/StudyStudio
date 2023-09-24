@@ -31,6 +31,7 @@ app.set("layout", "layouts/layout")
 //middleware
 app.use(expressEjsLayouts)
 app.use(express.static(publicDir))
+//app.use(express.json())
 
 //use routers
 app.use("/",indexRouter)
@@ -38,8 +39,18 @@ app.use("/quiz",quizRouter)
 
 //start server
 app.listen(process.env.PORT || 3000)
-const io = require('socket.io')(4000)
+
+// Socket server
+const io = require('socket.io')(4000, {
+    cors: {
+        origin: ['http://localhost:5173'],
+    },
+})
 
 io.on('connection', socket => {
-    socket.emit('message','connected succesfuly')
+   console.log('connected succesfuly') 
+   socket.on('win', () => {
+        console.log('someone won')
+        socket.broadcast.emit('someone-won')
+   })
 })
