@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import { io } from "socket.io-client";
-import { Socket } from "socket.io-client/debug";
+import { Socket } from "socket.io-client";
 
-const SocketContext = React.createContext<Socket | null>(null);
+const SocketContext = React.createContext<Socket | undefined>(undefined);
 
 export function useSocket() {
   const currentSocket = useContext(SocketContext);
   if (!currentSocket) {
-    throw new Error("sus");
+    throw new Error("no current socket");
   }
   return currentSocket;
 }
@@ -17,13 +17,13 @@ export function SocketProvider({ children }: any) {
   const [socket, setSocket] = useState<Socket>();
 
   useEffect(() => {
-    const newSocket = io("http://localhost:4000");
-
-    // console.log("a");
+    const newSocket: Socket = io();
 
     setSocket(newSocket);
 
-    // return () => newSocket.close();
+    return () => {
+      newSocket.close();
+    };
   }, []);
 
   return (
