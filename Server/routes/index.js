@@ -4,7 +4,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/',(req,res) =>{
-    res.render('homepage')
+    res.send("trust me im fine *sweats nervously* ").status(201)
 })
 
 module.exports = router

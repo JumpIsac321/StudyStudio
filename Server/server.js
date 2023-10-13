@@ -5,7 +5,6 @@ if (process.env.NODE_ENV !== "production") {
 //modules
 const express = require("express");
 const app = express();
-const expressEjsLayouts = require("express-ejs-layouts");
 // const mongoose = require('mongoose')
 // mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true })
 // const db = mongoose.connection
@@ -18,21 +17,14 @@ quizRouter = require("./routes/quiz");
 
 //directories
 const publicDir = __dirname + "/public";
-const viewsDir = __dirname + "../Client/react-project/views";
-
-//settings
-app.set("view engine", "ejs");
-app.set("views", viewsDir);
-app.set("layout", "layouts/layout");
 
 //middleware
-app.use(expressEjsLayouts);
 app.use(express.static(publicDir));
 //app.use(express.json())
 
 //use routers
 app.use("/", indexRouter);
-app.use("/quiz", quizRouter);
+// app.use("/quiz", quizRouter);
 
 //start server
 app.listen(process.env.PORT || 3000);

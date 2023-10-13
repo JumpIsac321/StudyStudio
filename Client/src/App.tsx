@@ -11,8 +11,6 @@ import Learning from "./Pages/Learning/Learning";
 import "/public/stylesheets/styles.css";
 import "/public/stylesheets/inputboxstyle.css";
 
-import { SocketProvider } from "./Contexts/SocketProvider";
-
 //App
 function App() {
   return (
